@@ -14,8 +14,15 @@ class CreateFeedbacksTable extends Migration
     public function up()
     {
         Schema::create('feedbacks', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('feedback_id');
+            $table->text('goal');
+            $table->text('message');
+            $table->text('advice');
+            $table->text('comment');
+            $table->date('feedback_date');
+            $table->integer('submission_id')->unsigned();
+            $table->foreign('submission_id')->references('submission_id')->on('assignment_submissions') ->onDelete('cascade'); 
+
         });
     }
 
