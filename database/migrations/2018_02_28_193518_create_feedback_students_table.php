@@ -14,8 +14,15 @@ class CreateFeedbackStudentsTable extends Migration
     public function up()
     {
         Schema::create('feedback_students', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('feedback_student_id');
+            $table->integer('student_id')->unsigned();
+            $table->integer('feedback_id')->unsigned();
+            $table->integer('submission_id')->unsigned();
+            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
+            $table->foreign('feedback_id')->references('feedback_id')->on('feedbacks') ->onDelete('cascade'); 
+            $table->foreign('submission_id')->references('submission_id')->on('assignment_submissions') ->onDelete('cascade'); 
+            
+
         });
     }
 
