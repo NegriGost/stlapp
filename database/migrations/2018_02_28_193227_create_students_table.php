@@ -34,7 +34,6 @@ class CreateStudentsTable extends Migration
             $table->text('technology_use_in_teaching');
             $table->foreign('city_id')->references('city_id')->on('cities') ->onDelete('cascade'); 
             $table->foreign('school_id')->references('school_id')->on('schools') ->onDelete('cascade'); 
-            $table->foreign('submission_id')->references('submission_id')->on('assignment_submission') ->onDelete('cascade'); 
             
         });
     }
