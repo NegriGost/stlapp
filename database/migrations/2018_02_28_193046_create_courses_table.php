@@ -17,6 +17,8 @@ class CreateCoursesTable extends Migration
             $table->increments('course_id');
             $table->string('name',255);
             $table->text('course_content',255);
+            $table->integer('department_id')->unsigned();
+            $table->foreign('department_id')->references('department_id')->on('departments') ->onDelete('cascade'); 
         });
     }
 
