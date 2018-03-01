@@ -14,8 +14,10 @@ class CreateGroupAssignmentsTable extends Migration
     public function up()
     {
         Schema::create('group_assignments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('group_id');
+            $table->integer('group_cod')->unsigned();
+            $table->integer('presence')->unsigned();
+            $table->integer('activity_date')->unsigned();
         });
     }
 
