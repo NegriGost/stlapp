@@ -14,8 +14,11 @@ class CreateSelfAssessmentsTable extends Migration
     public function up()
     {
         Schema::create('self_assessments', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('assessment_id');
+            $table->integer('student_id')->unsigned();
+            $table->tinyInteger('');
+            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
+            
         });
     }
 

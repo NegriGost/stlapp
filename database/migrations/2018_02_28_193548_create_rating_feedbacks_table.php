@@ -14,8 +14,17 @@ class CreateRatingFeedbacksTable extends Migration
     public function up()
     {
         Schema::create('rating_feedbacks', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('rating_id');
+            $table->text('goal');
+            $table->tinyInteger('timing');
+            $table->text('message');
+            $table->text('advice');
+            $table->text('comment');
+            $table->date('feedback_rating_date');
+            $table->integer('feedback_student_id')->unsigned();
+            $table->string('student_id')->unsigned();
+            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
+            $table->foreign('feedback_student_id')->references('feedback_student_id')->on('feedback_students') ->onDelete('cascade'); 
         });
     }
 
