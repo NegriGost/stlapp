@@ -20,8 +20,8 @@ class CreateFeedbacksTable extends Migration
             $table->text('advice');
             $table->text('comment');
             $table->date('feedback_date');
-            $table->integer('submission_id')->unsigned();
-            $table->foreign('submission_id')->references('submission_id')->on('assignment_submissions') ->onDelete('cascade'); 
+            $table->integer('assignment_submission_id')->unsigned();
+            $table->foreign('assignment_submission_id')->references('assignment_submission_id')->on('assignment_submissions') ->onDelete('cascade');
 
         });
     }

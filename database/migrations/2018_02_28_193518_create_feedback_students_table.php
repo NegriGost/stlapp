@@ -17,10 +17,10 @@ class CreateFeedbackStudentsTable extends Migration
             $table->increments('feedback_student_id');
             $table->integer('student_id')->unsigned();
             $table->integer('feedback_id')->unsigned();
-            $table->integer('submission_id')->unsigned();
+            $table->integer('assignment_submission_id')->unsigned();
             $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
             $table->foreign('feedback_id')->references('feedback_id')->on('feedbacks') ->onDelete('cascade'); 
-            $table->foreign('submission_id')->references('submission_id')->on('assignment_submissions') ->onDelete('cascade'); 
+            $table->foreign('assignment_submission_id')->references('assignment_submission_id')->on('assignment_submissions') ->onDelete('cascade');
             
 
         });

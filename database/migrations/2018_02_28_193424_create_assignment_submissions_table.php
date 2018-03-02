@@ -14,14 +14,12 @@ class CreateAssignmentSubmissionsTable extends Migration
     public function up()
     {
         Schema::create('assignment_submissions', function (Blueprint $table) {
-            $table->increments('submission_id');
+            $table->increments('assignment_submission_id');
             $table->text('area');
             $table->integer('grade')->unsigned();
             $table->integer('number_of_students')->unsigned();
             $table->date('start_date_of_lecture');
             $table->date('end_date_of_lecture');
-            $table->integer('teacher_id')->unsigned();
-            $table->integer('course_id')->unsigned();
             $table-text('purpose');
             $table->text('curriculum_requirement');
             $table->text('preview_text');
@@ -44,6 +42,8 @@ class CreateAssignmentSubmissionsTable extends Migration
             $table->integer('group_id')->unsigned();
             $table->integer('student_id')->unsigned();
             $table->integer('assignment_id')->unsigned();
+            $table->integer('teacher_id')->unsigned();
+            $table->integer('course_id')->unsigned();
             $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
             $table->foreign('group_id')->references('group_id')->on('group_assignments') ->onDelete('cascade'); 
             $table->foreign('assignment_id')->references('assignment_id')->on('assignment_descriptions') ->onDelete('cascade'); 
