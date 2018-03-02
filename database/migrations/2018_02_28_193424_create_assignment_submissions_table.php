@@ -20,7 +20,7 @@ class CreateAssignmentSubmissionsTable extends Migration
             $table->integer('number_of_students')->unsigned();
             $table->date('start_date_of_lecture');
             $table->date('end_date_of_lecture');
-            $table-text('purpose');
+            $table->text('purpose');
             $table->text('curriculum_requirement');
             $table->text('preview_text');
             $table->binary('preview_check');
