@@ -23,8 +23,8 @@ class CreateRatingFeedbacksTable extends Migration
             $table->date('feedback_rating_date');
             $table->integer('feedback_student_id')->unsigned();
             $table->integer('student_id')->unsigned();
-            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
-            $table->foreign('feedback_student_id')->references('feedback_student_id')->on('feedback_students') ->onDelete('cascade'); 
+            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade');
+            $table->foreign('feedback_student_id')->references('feedback_student_id')->on('feedback_students') ->onDelete('cascade');
         });
     }
 
