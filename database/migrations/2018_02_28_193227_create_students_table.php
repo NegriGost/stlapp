@@ -10,7 +10,7 @@ class CreateStudentsTable extends Migration
      * Run the migrations.
      *
      * @return void
-    // */
+     */
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
@@ -20,7 +20,6 @@ class CreateStudentsTable extends Migration
             $table->string('telephone');
             $table->integer('city_id')->unsigned();
             $table->integer('school_id')->unsigned();
-            $table->integer('assignment_submission_id')->unsigned();
             $table->text('digital_tools');
             $table->binary('workplace_tools');
             $table->text('workplace_tools_othe');
@@ -32,10 +31,8 @@ class CreateStudentsTable extends Migration
             $table->tinyInteger('student_to_student_feedback');
             $table->text('student_to_student_feedback_other');
             $table->text('technology_use_in_teaching');
-            $table->foreign('city_id')->references('city_id')->on('cities') ->onDelete('cascade');
+            $table->foreign('city_id')->references('city_id')->on('cities') ->onDelete('cascade'); 
             $table->foreign('school_id')->references('school_id')->on('schools') ->onDelete('cascade');
-            $table->foreign('assignment_submission_id')->references('assignment_submission_id')->on('assignment_submissions') ->onDelete('cascade');
-
         });
     }
 

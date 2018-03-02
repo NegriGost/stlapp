@@ -44,11 +44,11 @@ class CreateAssignmentSubmissionsTable extends Migration
             $table->integer('assignment_id')->unsigned();
             $table->integer('teacher_id')->unsigned();
             $table->integer('course_id')->unsigned();
-            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade');
-            $table->foreign('group_id')->references('group_id')->on('group_assignments') ->onDelete('cascade');
-            $table->foreign('assignment_id')->references('assignment_id')->on('assignment_descriptions') ->onDelete('cascade');
-            $table->foreign('teacher_id')->references('teacher_id')->on('teachers') ->onDelete('cascade');
-            $table->foreign('course_id')->references('course_id')->on('courses') ->onDelete('cascade');
+            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
+            $table->foreign('group_id')->references('group_id')->on('group_assignments') ->onDelete('cascade'); 
+            $table->foreign('assignment_id')->references('assignment_id')->on('assignment_descriptions') ->onDelete('cascade'); 
+            $table->foreign('teacher_id')->references('teacher_id')->on('teachers') ->onDelete('cascade'); 
+            $table->foreign('course_id')->references('course_id')->on('courses') ->onDelete('cascade'); 
 
         });
     }
