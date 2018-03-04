@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class User extends Model
 {
-    protected $primaryKey='student_id';
+    protected $primaryKey='user_id';
 }

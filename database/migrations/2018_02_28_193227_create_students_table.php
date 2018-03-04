@@ -17,6 +17,7 @@ class CreateStudentsTable extends Migration
             $table->increments('student_id');
             $table->integer('city_id')->unsigned();
             $table->integer('school_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->text('digital_tools');
             $table->binary('workplace_tools');
             $table->text('workplace_tools_othe');
@@ -30,6 +31,8 @@ class CreateStudentsTable extends Migration
             $table->text('technology_use_in_teaching');
             $table->foreign('city_id')->references('city_id')->on('cities') ->onDelete('cascade'); 
             $table->foreign('school_id')->references('school_id')->on('schools') ->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('users') ->onDelete('cascade');
+
         });
     }
 
