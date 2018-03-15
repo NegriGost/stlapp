@@ -20,10 +20,8 @@ class CreateAssignmentDescriptionsTable extends Migration
             $table->date('startdate');
             $table->date('deadline');
             $table->date('available_date');
-            $table->integer('teacher_id')->unsigned();
-            $table->integer('course_id')->unsigned();
-            $table->foreign('teacher_id')->references('teacher_id')->on('teachers') ->onDelete('cascade'); 
-            $table->foreign('course_id')->references('course_id')->on('courses') ->onDelete('cascade'); 
+            $table->integer('teacher_course_id')->unsigned();
+            $table->foreign('teacher_course_id')->references('teacher_course_id')->on('teacher_courses') ->onDelete('cascade');
         });
     }
 

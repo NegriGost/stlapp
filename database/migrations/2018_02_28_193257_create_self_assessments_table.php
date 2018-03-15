@@ -34,7 +34,6 @@ class CreateSelfAssessmentsTable extends Migration
             $table->tinyInteger('level1_6');
             $table->tinyInteger('level2_6');
             $table->tinyInteger('level3_6');
-            $table->foreign('student_id')->references('student_id')->on('students') ->onDelete('cascade'); 
         });
     }
 
